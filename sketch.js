@@ -24,17 +24,19 @@ function draw() {
 function loadCell() {
   for(let i = 0; i < 20; i++) {
      arr[i] = [];
-     arr[i] = new Cell( 10, 10);
+    //  arr[i] = new Cell( 10, 10);
   
   for(let i = 0; i < arr.length; i++) {
     for(let j = 0; j < arr.length; j++) {
         arr[i][j] = new Cell( 10, 10);
+        // cell[i][j].run()
     }
   }
   }
 }
 
 function runCell(){
-  for(let h = 0; h < arr.length; h++)
+  for(let h = 0; h < arr.length; h++) {
     cell[h].run()
+  }
 }
