@@ -4,16 +4,18 @@
 
 let arr = [];
 let cell;
-let row;
-let col;
+let rows, cols;
+let cellSize;
+let ff;
 
 function setup() {
   var cnv = createCanvas(600, 600);
   cnv.position((windowWidth-width)/2, 30);
-  loadCell();
+  // loadCell();
   // runCell();
+  ff = new FlowField()
   // console.log(arr);
-  console.log(arr[2][5]);
+  // console.log(arr[2][5]);
 }
 
 function draw() {
@@ -21,20 +23,20 @@ function draw() {
 }
 
 
-function loadCell() {
-  for(let i = 0; i < 20; i++) {
-     arr[i] = [];
-    //  arr[i] = new Cell( 10, 10);
+// function loadCell() {
+//   for(let i = 0; i < 20; i++) {
+//      arr[i] = [];
+//     //  arr[i] = new Cell( 10, 10);
   
-  for(let i = 0; i < arr.length; i++) {
-    for(let j = 0; j < arr.length; j++) {
-        arr[i][j] = new Cell( i, j);
-        arr[i][j].run()
-        // cell[i][j].run()
-    }
-  }
-  }
-}
+//   for(let i = 0; i < arr.length; i++) {
+//     for(let j = 0; j < arr.length; j++) {
+//         arr[i][j] = new Cell( i, j);
+//         arr[i][j].run()
+//         // cell[i][j].run()
+//     }
+//   }
+//   }
+// }
 
 function runCell(){
   for(let h = 0; h < 20; h++) {
