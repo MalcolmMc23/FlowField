@@ -21,13 +21,13 @@ function setup() {
 //    arr[a] = []
 //    for(let b = 0; b < rows; b++) {
 //      arr[a][b] 
+ff.render();
 
 }
 
 function draw() {
   // background(20);
-  ff.render();
+  // ff.render();
 }
-
 
 
