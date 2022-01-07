@@ -4,42 +4,30 @@
 
 let arr = [];
 let cell;
-let rows, cols;
 let cellSize;
+let cols, rows;
 let ff;
 
 function setup() {
   var cnv = createCanvas(600, 600);
   cnv.position((windowWidth-width)/2, 30);
-  // loadCell();
-  // runCell();
   ff = new FlowField()
-  // console.log(arr);
-  // console.log(arr[2][5]);
+  
+
+//   cellSize = 40;
+//   cols = width / cellSize;
+//   rows = height / cellSize;
+//  for(let a = 0; a < cols; a++) {
+//    arr[a] = []
+//    for(let b = 0; b < rows; b++) {
+//      arr[a][b] 
+
 }
 
 function draw() {
   // background(20);
+  ff.render();
 }
 
 
-// function loadCell() {
-//   for(let i = 0; i < 20; i++) {
-//      arr[i] = [];
-//     //  arr[i] = new Cell( 10, 10);
-  
-//   for(let i = 0; i < arr.length; i++) {
-//     for(let j = 0; j < arr.length; j++) {
-//         arr[i][j] = new Cell( i, j);
-//         arr[i][j].run()
-//         // cell[i][j].run()
-//     }
-//   }
-//   }
-// }
 
-function runCell(){
-  for(let h = 0; h < 20; h++) {
-    // cell[h].run()
-  }
-}

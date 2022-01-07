@@ -1,7 +1,6 @@
 class Cell {
     constructor(x, y) {
         this.loc = createVector( x, y);
-        
     }
 
     run() {
@@ -10,7 +9,7 @@ class Cell {
 
     render() {
         fill(0,255,0)
-        rect(this.loc.x, this.loc.y, 100);
+        ellipse(this.loc.x, this.loc.y, 10);
     }
 
 }
