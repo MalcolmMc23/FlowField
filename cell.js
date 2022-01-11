@@ -16,7 +16,7 @@ class Cell {
         rows = height / cellSize;
          this.x = this.x * cellSize;
          this.y = this.y * cellSize;
-         console.log(this.x)
+         //console.log(this.x)
         fill(0,200,0)
         rect(this.x, this.y, cellSize)
         this.center = createVector(cellSize/2, cellSize/2);

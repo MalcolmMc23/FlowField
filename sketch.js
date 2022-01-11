@@ -1,6 +1,6 @@
 // Malcolm McDonald
 // 01 04 2022
-// cell project
+// flowField
 
 let arr = [];
 let cell;
@@ -23,6 +23,7 @@ function draw() {
 
 function loadCell() {
   for(let i = 0; i < arr.length; i++ ) {
+    // arr[i].run()
   }
 }
 
