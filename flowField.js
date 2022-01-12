@@ -17,9 +17,7 @@ class FlowField {
 
 
   render() {
-    // cellSize = 40;
-    // cols = width / cellSize;
-    // rows = height / cellSize;
+
     for(let a = 0; a < arr.length; a++) {
       for(let b = 0; b < arr[0].length; b++) {
         arr[a][b].run()
