@@ -13,18 +13,14 @@ function setup() {
   cnv.position((windowWidth-width)/2, 30);
   ff = new FlowField()
   ff.render();
-  // loadCell();
 }
 
 function draw() {
   // background(20);
-  // ff.render();
+
 }
 
-function loadCell() {
-  for(let i = 0; i < arr.length; i++ ) {
-    // arr[i].run()
-  }
-}
+
+
 
 
