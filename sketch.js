@@ -8,13 +8,16 @@ let cellSize;
 let cols, rows;
 let ff;
 let balls = [];
+let xoff = 0;
+let yoff = 0;
+
 
 function setup() {
   var cnv = createCanvas(600, 600);
   cnv.position((windowWidth-width)/2, 30);
   ff = new FlowField()
   ff.render();
-  loadBalls(10);
+  // loadBalls(10);
 }
 
 function draw() {

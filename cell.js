@@ -4,6 +4,10 @@ class Cell {
          this.x = x;
          this.y = y;
          this.angle = random(TWO_PI)
+         this.r = noise(xoff, yoff) * TWO_PI
+         this.v = p5.Vector.fromAngle(random(this.r));
+        this.inc = 2
+
     }
 
     run() {
@@ -11,6 +15,11 @@ class Cell {
     }
 
     render() {
+        // let xoff = xoff + inc;
+        // let yoff = yoff + inc;
+        // let r = noise(xoff, yoff) * TWO_PI
+
+
         cellSize = 40;
          this.x = this.x * cellSize;
          this.y = this.y * cellSize;
@@ -24,8 +33,16 @@ class Cell {
         let x2 = x1+cos(this.angle)*10//*cellSize/2// hor dist from center
         let y2 = y1+sin(this.angle)*10//*cellSize/2// vert dist from center
 
-        fill(255,0,0)
-        line( x1, y1, x2, y2);
+        // fill(255,0,0)
+        // line( x1, y1, x2, y2);
+        xoff += this.inc;
+        push();
+        translate(this.center.x, this.center.y)
+        rotate(this.v.heading())
+        stroke(10)
+        line( 0, 0, cellSize, 0)
+        pop();
+        yoff += this.inc;
     }
 
 }
