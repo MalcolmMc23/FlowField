@@ -8,8 +8,6 @@ let cellSize;
 let cols, rows;
 let ff;
 let balls = [];
-let xoff = 1;
-let yoff = 1;
 
 
 function setup() {

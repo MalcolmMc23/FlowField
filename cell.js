@@ -4,9 +4,11 @@ class Cell {
          this.x = x;
          this.y = y;
          this.angle = random(TWO_PI)
-         this.r = noise(xoff, yoff) * TWO_PI
+         this.r = noise(this.xoff, this.yoff) * TWO_PI
          this.v = p5.Vector.fromAngle(this.r);
          this.inc = 0.01
+         this.xoff = 0;
+         this.yoff = 0;
 
     }
 
@@ -35,14 +37,14 @@ class Cell {
 
         // fill(255,0,0)
         // line( x1, y1, x2, y2);
-        xoff += this.inc;
+        this.xoff += this.inc;
         push();
         translate(this.center.x, this.center.y)
         rotate(this.v.heading())
         stroke(10)
         line( 0, 0, cellSize, 0)
         pop();
-        yoff += this.inc;
+        this.yoff += 0.01;
     }
 
 }
