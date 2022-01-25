@@ -5,8 +5,8 @@ class Cell {
          this.y = y;
          this.angle = random(TWO_PI)
          this.r = noise(xoff, yoff) * TWO_PI
-         this.v = p5.Vector.fromAngle(random(this.r));
-        this.inc = 2
+         this.v = p5.Vector.fromAngle(this.r);
+         this.inc = 0.01
 
     }
 

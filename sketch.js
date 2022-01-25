@@ -8,8 +8,8 @@ let cellSize;
 let cols, rows;
 let ff;
 let balls = [];
-let xoff = 0;
-let yoff = 0;
+let xoff = 1;
+let yoff = 1;
 
 
 function setup() {
@@ -23,7 +23,7 @@ function setup() {
 function draw() {
   // background(20);
   // ff.render();
-  runBalls();
+  // runBalls();
 
 
 }
