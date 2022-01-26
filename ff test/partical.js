@@ -1,19 +1,18 @@
 class Partical {
         constructor() {
             this.loc = createVector(random(width), random(height));
-            this.vel = createVector(random(-0.1, 0.1), random(-0.1, 0.1))
-            this.acc = createVector(random(.0002,.0002), random(.0002,.0002))
-            this.diam = 10
+            this.vel = p5.Vector.random2D()
+            this.acc = createVector(0, 0)
+            this.diam = 1
         }
     
         run() {
             this.render();
-            this.update();
             this.checkEdges()
         }
     
         render() {
-            fill(200, 0, 0);
+            fill(20, 20, 20);
             ellipse(this.loc.x, this.loc.y, this.diam);
         }
         update() {
@@ -22,9 +21,9 @@ class Partical {
         }
     
         checkEdges() {
-        if (this.loc.x < 0) this.vel.x = -this.vel.x;
-        if (this.loc.x > width) this.vel.x = -this.vel.x;
-        if (this.loc.y < 0) this.vel.y = -this.vel.y;
-        if (this.loc.y > height) this.vel.y = -this.vel.y;
+        if (this.loc.x < 0) this.loc.x = width;
+        if (this.loc.x > width) this.loc.x = 0;
+        if (this.loc.y < 0) this.loc.y = height;
+        if (this.loc.y > height) this.loc.y = 0; 
         }
 }

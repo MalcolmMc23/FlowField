@@ -12,6 +12,8 @@ var fr;
 
 var particals = [];
 
+var flowField = []
+
 function setup() {
   var cnv = createCanvas(600, 600);
   cnv.position((windowWidth-width)/2, 30);
@@ -20,7 +22,11 @@ function setup() {
   cols = floor(width/cellSize);
   rows = floor(height/cellSize);
 
-  particals[0] = new Partical();
+  flowField = new Array()
+
+  for(var i = 0; i < 10; i++) {
+  particals[i] = new Partical();
+  }
 }
 
 function draw() {
@@ -33,7 +39,7 @@ function draw() {
       var r = noise(xoff, yoff, zoff) * TWO_PI
       var v = p5.Vector.fromAngle(r);
       xoff += inc;
-      stroke(0);
+      stroke(0, 100);
       push();
       translate(x * cellSize, y * cellSize);
       rotate(v.heading())
@@ -44,11 +50,12 @@ function draw() {
       // rect(x * cellSize, y * cellSize, cellSize);
     }
     yoff += inc;
-    zoff += 0.001
+    // zoff += 0.001
 
-    particals[0].update();
-    particals[0].run();
-
+  for(var i = 0; i < particals.length; i++) {
+    particals[i].run();
+    particals[i].update();
+    }
 
     fr.html(floor(frameRate()));
   }
