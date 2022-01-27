@@ -4,7 +4,7 @@ class Partical {
             this.vel = createVector(0, 0)
             this.acc = createVector(0, 0)
             this.diam = 5
-            this.lim = 0.1;
+            this.lim = 0.5;
         }
     
         run() {
@@ -13,7 +13,9 @@ class Partical {
         }
     
         render() {
-            fill(20, 20, 20);
+            this.clr = img.get(this.loc.x, this.loc.y);
+            fill(this.clr);
+            noStroke(.01)
             ellipse(this.loc.x, this.loc.y, this.diam);
         }
         update() {
