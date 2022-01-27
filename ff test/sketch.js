@@ -12,7 +12,7 @@ var fr;
 
 var particals = [];
 
-var flowField = []
+var flowField;
 
 function setup() {
   var cnv = createCanvas(600, 600);
@@ -22,9 +22,9 @@ function setup() {
   cols = floor(width/cellSize);
   rows = floor(height/cellSize);
 
-  flowField = new Array()
+  flowField = new Array(cols * rows)
 
-  for(var i = 0; i < 10; i++) {
+  for(var i = 0; i < 100; i++) {
   particals[i] = new Partical();
   }
 }
@@ -36,8 +36,11 @@ function draw() {
   for(var x = 0; x < rows; x++) {
     var xoff = 0;
     for(var y = 0; y < cols; y++) {
+      index = x + y * cols
       var r = noise(xoff, yoff, zoff) * TWO_PI
       var v = p5.Vector.fromAngle(r);
+      v.setMag(0.1)
+      flowField[index] = v
       xoff += inc;
       stroke(0, 100);
       push();
@@ -53,6 +56,7 @@ function draw() {
     // zoff += 0.001
 
   for(var i = 0; i < particals.length; i++) {
+    particals[i].follow(flowField);
     particals[i].run();
     particals[i].update();
     }
