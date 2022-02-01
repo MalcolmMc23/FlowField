@@ -16,7 +16,7 @@ class Partical {
             this.clr = img.get(this.loc.x, this.loc.y);
             fill(this.clr);
             noStroke(.01)
-            ellipse(this.loc.x, this.loc.y, this.diam);
+            ellipse(this.loc.x + width/2, this.loc.y, this.diam);
         }
         update() {
             this.loc.add(this.vel);

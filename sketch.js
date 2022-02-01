@@ -10,15 +10,17 @@ var zoff = 0;
 var fr;
 var particals = [];
 var flowField;
+var img, img2;
 
-var img;
+var slider;
+
 
 function preload() {
   img = loadImage("Fin.jpeg")
 }
 
 function setup() {
-  var cnv = createCanvas(600, 600);
+  var cnv = createCanvas(1400, 700);
   cnv.position((windowWidth-width)/2, 30);
   background(20)
 
@@ -28,11 +30,15 @@ function setup() {
 
   flowField = new Array(cols * rows)
 
-  for(var i = 0; i < 50; i++) {
+  for(var i = 0; i < 100; i++) {
   particals[i] = new Partical();
   }
 
-  // image(img, 0, 0);
+  image(img, 0, 0);
+
+  slider = createSlider(0.0001, 0.005, 0.0001, 0);
+  slider.position(width/2, 10);
+
 
 }
 
@@ -51,7 +57,7 @@ function draw() {
       xoff += inc;
       stroke(0, 100);
       push();
-      translate(x * cellSize, y * cellSize);
+      translate(x * cellSize + width/2, y * cellSize);
       rotate(v.heading())
       // line(0, 0, cellSize, 0)
 
@@ -60,7 +66,9 @@ function draw() {
       // rect(x * cellSize, y * cellSize, cellSize);
     }
     yoff += inc;
-    zoff += 0.001
+    var val = slider.value();
+
+    zoff += val
 
   for(var i = 0; i < particals.length; i++) {
     particals[i].follow(flowField);
